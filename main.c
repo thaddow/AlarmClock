@@ -332,24 +332,52 @@ void display7Seg(void)
     	digitDisplayCounter++;
     	if (digitDisplayCounter >4) digitDisplayCounter = 0;
 
+    	
     	/*
+		int skip = 0; //local flag to indicate that display should be skipped if we are on the "off" flash period
+    	int digit = digitDisplayCounter;
+    	digitDisplayCounter++;
+    	if (digitDisplayCounter >4) digitDisplayCounter = 0;
+
+
     	// If we are in hourflashing mode and we are supposed to be displaying the first or second digit
     	if ((hoursFlash == 1 && digit = 0) || (hoursFlash ==1 && digit == 1)){
-    		if (flashCounter < 100 ) {
-
-
-
+    		if (flashCounter < 100 ) { //Setting 100 counts as the trial flash time
+    			if (flashBlinkState == 0){ //Currently in the "off" state of blinking
+    				skip = 1; //Set flag to skip displaying this digit
+    			}
+    		} else { //if flash counter greater than 100
+    			flashCounter = 0; //Reset the counter to zero
+    			//toggle the flashBlinkState flag to the other state
+    			if (flashBlinkState = 0)  {
+    				flashBlinkState = 1;
+    			}else {
+    				flashBlinkState = 0
+    			}
     		}
-
-
-    	//insert code
     	}
 
-    	// If we are in min flashing mode and we are supposed to be displaying the first or second digit
+
+
+    	// If we are in min flashing mode and we are supposed to be displaying the third or fourth digit
     	if (minFlash == 1 && digit = 2|| minFlash ==1 && digit == 3){
-    	//insert code
-
+    		if (flashCounter < 100 ) { //Setting 100 counts as the trial flash time
+    			if (flashBlinkState == 0){ //Currently in the "off" state of blinking
+    				skip = 1; //Set flag to skip displaying this digit
+    			}
+    		} else { //if flash counter greater than 100
+    			flashCounter = 0; //Reset the counter to zero
+    			//toggle the flashBlinkState flag to the other state
+    			if (flashBlinkState = 0)  {
+    				flashBlinkState = 1;
+    			}else {
+    				flashBlinkState = 0
+    			}
+    		}
     	}
+    	
+    	//disable first digit for 12 hour times less than 10 AND AM/PM dot
+    	//and alarm set dot
 */
 
 
