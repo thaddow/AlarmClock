@@ -1,0 +1,21 @@
+Git Commands:
+
+
+Clone
+git clone https://github.com/thaddow/AlarmClock.git
+
+Commit:
+git commit -a -m "Insert Comments -> what was added, tested or not etc"
+
+Status
+git status
+
+Push -> send code back to github repo (master)
+git push -u origin master
+
+Add File
+git add <name of file>
+
+
+
+
